@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0a0c0f;
+    color: #e2e8f0;
+    -webkit-font-smoothing: antialiased;
+  }
+  html.dark body {
+    background-color: #0a0c0f;
+    color: #e2e8f0;
+  }
+  html:not(.dark) body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: #111318; }
+  ::-webkit-scrollbar-thumb { background: #2e3340; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #00e5cc; }
+}
+
+@layer components {
+  html.dark .glass-card {
+    background: rgba(26, 29, 36, 0.88);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  }
+  html:not(.dark) .glass-card {
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(15, 23, 42, 0.16);
+    box-shadow: 0 8px 22px rgba(15,23,42,0.1);
+  }
+  .glass-card {
+    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .number-display {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+  .skeleton-pulse {
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+    background: linear-gradient(90deg, #1a1d24 25%, #22262f 50%, #1a1d24 75%);
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes skeletonPulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
