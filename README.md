@@ -138,37 +138,8 @@ All global state lives in src/context/FinanceContext.jsx using React Context API
 
 State is automatically synced to localStorage on every change.
 
-### Available Actions
 
-```js
-dispatch({ type: 'ADD_TRANSACTION',    payload: transaction })
-dispatch({ type: 'EDIT_TRANSACTION',   payload: transaction })
-dispatch({ type: 'DELETE_TRANSACTION', payload: id })
-dispatch({ type: 'SET_ROLE',           payload: 'admin' | 'viewer' })
-dispatch({ type: 'TOGGLE_DARK' })
-dispatch({ type: 'SET_FILTER',         payload: { search, type, sortBy, sortDir } })
-dispatch({ type: 'SET_TAB',            payload: 'dashboard' | 'transactions' | 'insights' })
-```
 
----
-
-## Mock Data
-
-Comes with 28 pre-loaded transactions across June and May 2025 covering 12 categories:
-
-Salary, Freelance, Investment, Housing, Food and Dining, Transport, Entertainment, Healthcare, Shopping, Utilities, Travel, Education
-
-### Reset Data
-
-To wipe all saved data and restore defaults, run this in your browser DevTools console:
-
-```js
-localStorage.removeItem('finance_dashboard_v1')
-```
-
-Then refresh the page.
-
----
 
 ## Roadmap
 
